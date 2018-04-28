@@ -108,6 +108,7 @@ html, body {
     font-weight: 500;
     transition-property: color, opacity;
     transition-duration: 0.2s;
+    position: relative;
 }
 
 .nav__link:hover {
@@ -117,6 +118,17 @@ html, body {
 .nav__link:active {
     color: #000000;
     opacity: 0.3;
+}
+
+.directory::before {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    bottom: -11px;
+    left: 0;
+    background: #fb565a;
 }
 
 .nav__list-bin {
@@ -171,7 +183,6 @@ html, body {
     padding: 0;
     width: 18px;
     height: 18px;
-    background: white;
     display: inline-block;
     border: 5px solid white;
     vertical-align: top;
@@ -181,6 +192,9 @@ html, body {
 
 .active {
     background: #c1c1c1;
+}
+.no_active {
+    background: white;
 }
 
 .slide {
@@ -198,16 +212,18 @@ html, body {
 
 .slide:nth-child(2) {
     background: url("../img/sliders/slide2.png") no-repeat 100% 0;
-    display: none;
 }
 
 .slide:nth-child(3) {
     background: url("../img/sliders/slide3.png") no-repeat 100% 0;
-    display: none;
 }
 
 .show__slide {
     display: block;
+}
+
+.hidden {
+    display: none;
 }
 
 .slide__headline {
